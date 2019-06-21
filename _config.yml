@@ -4,6 +4,13 @@ image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-46465113-2"
 
+# defaul
+defaults:
+  - scope:
+      path: "/images"
+    values:
+      image: true
+
 # UI configs
 title: "Tranh cua hoa sy Dang Tin Tuong"
 subtitle: "See the world through my eyes!"
