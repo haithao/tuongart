@@ -19,10 +19,9 @@ layout: default
     <div id="main">
         {% for image in site.static_files %}
         {% if image.path contains 'thumbs' %}
-		{% assign img = image.path %}
 		<article class="thumb">
             <a href="{{ site.baseurl }}{{ image.path }}" class="image">
-                <img src="{{ site.baseurl }}{% img | replace: 'thumbs', 'fulls' %}" alt=""
+                <img src="{{ site.baseurl }}{% image.path | replace: 'thumbs', 'fulls' %}" alt=""
                      data-name="{{ image.name }}"/></a>
             <!--<h2></h2>
             <p></p>-->
