@@ -21,8 +21,8 @@ layout: default
         {% if image.path contains 'thumbs' %}
 		{% assign img = image.path %}
 		<article class="thumb">
-            <a href="{{ image.path }}" class="image">
-                <img src="{% img | replace: 'thumbs', 'fulls' %}" alt=""
+            <a href="{{ site.baseurl }}{{ image.path }}" class="image">
+                <img src="{{ site.baseurl }}{% img | replace: 'thumbs', 'fulls' %}" alt=""
                      data-name="{{ image.name }}"/></a>
             <!--<h2></h2>
             <p></p>-->
