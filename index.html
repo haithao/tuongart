@@ -16,32 +16,17 @@ layout: default
     </header>
 
     <!-- Main -->
-    <div id="main">
-		{% assign images = site.static_files | where: "image", true %}		
-        {% for image in images}
-        {% if image.path contains 'thumbs' %}
-		<article class="thumb">
-            <a href="{{ site.baseurl }}{{ image.path }}" class="image">
-                <!-- <img src="{{ site.baseurl }}{% image.path | replace: 'thumbs', 'fulls' %}" alt="" -->
-                     <!-- data-name="{{ image.name }}"/></a> -->
-            <!--<h2></h2>
-            <p></p>-->
+	<div id="main">
+        {% for image in site.static_files %}
+        {% if image.path contains 'fulls' %}
+        <article class="thumb">
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
         </article>
         {% endif %}
         {% endfor %}
     </div>
-	
-	<!-- <div id="main"> -->
-        <!-- {% for image in site.static_files %} -->
-        <!-- {% if image.path contains 'fulls' %} -->
-        <!-- <article class="thumb"> -->
-            <!-- <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image"> -->
-                <!-- <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="" -->
-                     <!-- data-name="{{ image.name }}"/></a> -->
-        <!-- </article> -->
-        <!-- {% endif %} -->
-        <!-- {% endfor %} -->
-    <!-- </div> -->
 
     <!-- Footer -->
     <footer id="footer" class="panel">
